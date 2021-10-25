@@ -1,34 +1,54 @@
 package com.grupoh.springbootmvc.pagina;
 
+import com.github.javafaker.Faker;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
+import java.util.Locale;
 
 @Configuration
 public class PaginaConfig {
 
     @Bean
     CommandLineRunner commandLineRunner(PaginaRepository paginaRepository) {
-        return args -> {
-            Pagina alvaro = new Pagina(
-                    "Alvaro"
-            );
-            Pagina pablo = new Pagina(
-                    "Pablo"
-            );
-            Pagina manuel = new Pagina(
-                    "Manuel"
-            );
-            Pagina david = new Pagina(
-                    "David"
-            );
 
+        Faker faker = new Faker(new Locale("es"));
+
+        Pagina uno = new Pagina(
+                faker.animal().name(),
+                faker.internet().url(),
+                faker.harryPotter().location(),
+                faker.harryPotter().quote(),
+                faker.internet().image()
+        );
+        Pagina dos = new Pagina(
+                faker.animal().name(),
+                faker.internet().url(),
+                faker.harryPotter().location(),
+                faker.harryPotter().quote(),
+                faker.internet().image()
+        );
+        Pagina tres = new Pagina(
+                faker.animal().name(),
+                faker.internet().url(),
+                faker.harryPotter().location(),
+                faker.harryPotter().quote(),
+                faker.internet().image()
+        );
+        Pagina cuatro = new Pagina(
+                faker.animal().name(),
+                faker.internet().url(),
+                faker.harryPotter().location(),
+                faker.harryPotter().quote(),
+                faker.internet().image()
+        );
+
+
+        return args -> {
             paginaRepository.saveAll(
-                    List.of(alvaro,pablo,manuel,david)
+                    List.of(uno,dos,tres,cuatro)
             );
 
         };
