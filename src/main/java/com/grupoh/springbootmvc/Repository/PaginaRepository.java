@@ -10,6 +10,6 @@ import java.util.Optional;
 public interface PaginaRepository extends JpaRepository<Pagina, Long> {
 
     // @Query("SELECT s FROM Pagina s WHERE s.titulo = ?1")
-    Optional<Pagina> findPaginaByTitulo(String titulo);
+    Pagina findPaginaByTitulo(String titulo);
     List<Pagina> findAll();
 }
