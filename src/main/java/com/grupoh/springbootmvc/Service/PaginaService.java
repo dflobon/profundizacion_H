@@ -1,5 +1,7 @@
-package com.grupoh.springbootmvc.pagina;
+package com.grupoh.springbootmvc.Service;
 
+import com.grupoh.springbootmvc.Entity.Pagina;
+import com.grupoh.springbootmvc.Repository.PaginaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
