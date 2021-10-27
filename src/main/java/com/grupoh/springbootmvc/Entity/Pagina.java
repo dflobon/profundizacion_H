@@ -1,4 +1,4 @@
-package com.grupoh.springbootmvc.pagina;
+package com.grupoh.springbootmvc.Entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;

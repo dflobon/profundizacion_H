@@ -1,5 +1,6 @@
-package com.grupoh.springbootmvc.pagina;
+package com.grupoh.springbootmvc.Repository;
 
+import com.grupoh.springbootmvc.Entity.Pagina;
 import org.springframework.data.jpa.repository.JpaRepository;
 // import org.springframework.data.jpa.repository.Query;
 

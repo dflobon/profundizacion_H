@@ -1,6 +1,8 @@
-package com.grupoh.springbootmvc.pagina;
+package com.grupoh.springbootmvc.Config;
 
 import com.github.javafaker.Faker;
+import com.grupoh.springbootmvc.Entity.Pagina;
+import com.grupoh.springbootmvc.Repository.PaginaRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
