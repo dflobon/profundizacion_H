@@ -9,10 +9,12 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Conjunto de tests sobre la clase PaginaService")
+@SpringBootTest
 public class PaginaServiceTests {
 
     @Autowired
