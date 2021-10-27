@@ -10,6 +10,7 @@ import java.util.List;
 @Service
 public class PaginaService {
     private final PaginaRepository paginaRepository;
+
     @Autowired
     public PaginaService(PaginaRepository paginaRepository) {
         this.paginaRepository = paginaRepository;
@@ -18,6 +19,11 @@ public class PaginaService {
 
     public Pagina getPagina(String titulo) {
         return paginaRepository.findPaginaByTitulo(titulo);
+    }
+
+    // Method to save all paginas into the DB
+    public void saveAllPaginas(List<Pagina> lista) {
+        paginaRepository.saveAll(lista);
     }
 
     // Method to get all the paginas in to the DB
