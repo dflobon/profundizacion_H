@@ -16,8 +16,8 @@ public class PaginaService {
     }
 
 
-    public List<Pagina> getPaginas() {
-        return paginaRepository.findAll();
+    public Pagina getPagina(String titulo) {
+        return paginaRepository.findPaginaByTitulo(titulo);
     }
 
     // Method to get all the paginas in to the DB
