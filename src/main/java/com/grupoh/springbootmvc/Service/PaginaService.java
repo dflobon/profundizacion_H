@@ -10,13 +10,18 @@ import java.util.List;
 @Service
 public class PaginaService {
     private final PaginaRepository paginaRepository;
-
+    @Autowired
     public PaginaService(PaginaRepository paginaRepository) {
         this.paginaRepository = paginaRepository;
     }
 
-    @Autowired
+
     public List<Pagina> getPaginas() {
+        return paginaRepository.findAll();
+    }
+
+    // Method to get all the paginas in to the DB
+    public List<Pagina> getAllPaginas() {
         return paginaRepository.findAll();
     }
 
