@@ -21,6 +21,11 @@ public class PaginaService {
         return paginaRepository.findPaginaByTitulo(titulo);
     }
 
+    // Method to delete all paginas into the DB
+    public void deleteAllPaginas() {
+        paginaRepository.deleteAll();
+    }
+
     // Method to save all paginas into the DB
     public void saveAllPaginas(List<Pagina> lista) {
         paginaRepository.saveAll(lista);
