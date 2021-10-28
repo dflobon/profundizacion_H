@@ -2,6 +2,7 @@ package com.grupoh.springbootmvc.Entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Objects;
 
 @Entity(name = "Pagina")
 @Table(
@@ -165,5 +166,27 @@ public class Pagina {
                 ", fecha=" + fecha +
                 ", imagen='" + imagen + '\'' +
                 '}';
+    }
+
+    // Overriding equals() to compare two paaginas
+    @Override
+    public boolean equals(Object o) {
+
+        // If the object is compared with itself then return true
+        if (o == this) {
+            return true;
+        }
+
+        /* Check if o is an instance of Complex or not
+          "null instanceof [type]" also returns false */
+        if (!(o instanceof Pagina)) {
+            return false;
+        }
+
+        // typecast o to Complex so that we can compare data members
+        Pagina c = (Pagina) o;
+
+        // Compare the data members and return accordingly
+        return Objects.equals(c.id, this.id);
     }
 }
