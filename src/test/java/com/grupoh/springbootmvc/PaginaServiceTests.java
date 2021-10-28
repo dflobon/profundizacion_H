@@ -25,6 +25,10 @@ public class PaginaServiceTests {
     public void insertarVariasPaginas() {
 
 
+        //Primero se vacía la BBDD para tener un entorno estable en el que trabajar
+        paginaService.deleteAllPaginas();
+
+
         Pagina uno = new Pagina(
                 "Tipo 1",
                 "www.pagina1.es",
