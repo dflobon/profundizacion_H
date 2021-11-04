@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PaginaService {
@@ -36,4 +37,7 @@ public class PaginaService {
         return paginaRepository.findAll();
     }
 
+    public Optional<Pagina> getPaginaFromId(Long paginaId) {
+        return paginaRepository.findById(paginaId);
+    }
 }
