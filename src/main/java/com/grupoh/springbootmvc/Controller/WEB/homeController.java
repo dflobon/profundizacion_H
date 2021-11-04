@@ -1,4 +1,4 @@
-package com.grupoh.springbootmvc.Controller;
+package com.grupoh.springbootmvc.Controller.WEB;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

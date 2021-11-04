@@ -1,6 +1,6 @@
 package com.grupoh.springbootmvc;
 
-import com.grupoh.springbootmvc.Controller.PaginaController;
+import com.grupoh.springbootmvc.Controller.WEB.PaginaController;
 import com.grupoh.springbootmvc.Service.PaginaService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

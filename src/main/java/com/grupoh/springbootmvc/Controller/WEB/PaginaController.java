@@ -1,4 +1,4 @@
-package com.grupoh.springbootmvc.Controller;
+package com.grupoh.springbootmvc.Controller.WEB;
 
 import com.grupoh.springbootmvc.Entity.Pagina;
 import com.grupoh.springbootmvc.Service.PaginaService;
@@ -20,24 +20,11 @@ public class PaginaController {
         this.paginaService = paginaService;
     }
 
-    // ================ WEB =======================
     @GetMapping
     public String paginaIndex(Model model) {
         model.addAttribute("paginas", paginaService.getAllPaginas());
         return "vistaPaginaIndex";
     }
-    // ================ WEB =======================
-    // ================ API =======================
-    @RequestMapping("/api")
-    public List<Pagina> getPaginas() {
-        return paginaService.getAllPaginas();
-    }
 
-    @GetMapping("/api/{titulo}")
-    @ResponseBody
-    public Pagina getPaginas(@PathVariable("titulo") String titulo) {
-        return paginaService.getPagina(titulo);
-    }
-    // ================ API =======================
 
 }
