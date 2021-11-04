@@ -53,4 +53,14 @@ public class PaginaService {
                 "Pagina con id " + paginaId + " no existe"
         );
     }
+
+    public void updatePagina(Long paginaId, Pagina pagina) {
+        if (paginaRepository.existsById(paginaId)) {
+            pagina.setId(paginaId);
+            paginaRepository.save(pagina);
+            System.out.println(pagina);
+        } else throw new IllegalStateException(
+                "Compania con id " + paginaId + " no existe"
+        );
+    }
 }
