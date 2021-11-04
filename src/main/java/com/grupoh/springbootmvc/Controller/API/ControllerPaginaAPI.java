@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/paginas")
 public class ControllerPaginaAPI {
 
     public PaginaService paginaService;
@@ -22,8 +22,14 @@ public class ControllerPaginaAPI {
         return paginaService.getAllPaginas();
     }
 
-    @GetMapping("/api/{paginaId}")
+    @GetMapping("{paginaId}")
     public Optional<Pagina> getPaginaFromId(@PathVariable("paginaId") Long paginaId) {
         return paginaService.getPaginaFromId(paginaId);
     }
+    @PostMapping()
+    public void createPagina(@RequestBody Pagina pagina) {
+        paginaService.addPagina(pagina);
+    }
+
+
 }
