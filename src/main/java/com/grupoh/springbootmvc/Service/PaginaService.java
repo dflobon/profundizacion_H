@@ -40,4 +40,9 @@ public class PaginaService {
     public Optional<Pagina> getPaginaFromId(Long paginaId) {
         return paginaRepository.findById(paginaId);
     }
+
+    public void addPagina(Pagina pagina) {
+        paginaRepository.save(pagina);
+        System.out.println(pagina);
+    }
 }
