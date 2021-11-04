@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class PaginaService {
@@ -36,4 +37,30 @@ public class PaginaService {
         return paginaRepository.findAll();
     }
 
+    public Optional<Pagina> getPaginaFromId(Long paginaId) {
+        return paginaRepository.findById(paginaId);
+    }
+
+    public void addPagina(Pagina pagina) {
+        paginaRepository.save(pagina);
+        System.out.println(pagina);
+    }
+
+    public void deletePaginaById(Long paginaId) {
+        if (paginaRepository.existsById(paginaId)) {
+            paginaRepository.deleteById(paginaId);
+        } else throw new IllegalStateException(
+                "Pagina con id " + paginaId + " no existe"
+        );
+    }
+
+    public void updatePagina(Long paginaId, Pagina pagina) {
+        if (paginaRepository.existsById(paginaId)) {
+            pagina.setId(paginaId);
+            paginaRepository.save(pagina);
+            System.out.println(pagina);
+        } else throw new IllegalStateException(
+                "Compania con id " + paginaId + " no existe"
+        );
+    }
 }
