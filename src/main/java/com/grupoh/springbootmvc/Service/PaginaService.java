@@ -45,4 +45,12 @@ public class PaginaService {
         paginaRepository.save(pagina);
         System.out.println(pagina);
     }
+
+    public void deletePaginaById(Long paginaId) {
+        if (paginaRepository.existsById(paginaId)) {
+            paginaRepository.deleteById(paginaId);
+        } else throw new IllegalStateException(
+                "Pagina con id " + paginaId + " no existe"
+        );
+    }
 }

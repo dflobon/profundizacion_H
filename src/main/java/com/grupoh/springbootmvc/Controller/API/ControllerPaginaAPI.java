@@ -30,6 +30,10 @@ public class ControllerPaginaAPI {
     public void createPagina(@RequestBody Pagina pagina) {
         paginaService.addPagina(pagina);
     }
+    @DeleteMapping("{paginaId}")
+    public void deletePaginaById(@PathVariable("paginaId") Long paginaId){
+        paginaService.deletePaginaById(paginaId);
+    }
 
 
 }
