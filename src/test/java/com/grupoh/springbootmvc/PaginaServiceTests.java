@@ -3,6 +3,7 @@ package com.grupoh.springbootmvc;
 import com.grupoh.springbootmvc.Entity.Pagina;
 import com.grupoh.springbootmvc.Repository.PaginaRepository;
 import com.grupoh.springbootmvc.Service.PaginaService;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,6 +12,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("Conjunto de tests sobre la clase PaginaService")
@@ -20,13 +22,15 @@ public class PaginaServiceTests {
     @Autowired
     PaginaService paginaService;
 
+    @BeforeEach
+    private void initDB(){
+        // Limpiamos la BBDD
+        paginaService.deleteAllPaginas();
+    }
+
     @DisplayName("Test que inserta varias páginas y luego las consulta")
     @Test
     public void insertarVariasPaginas() {
-
-
-        //Primero se vacía la BBDD para tener un entorno estable en el que trabajar
-        paginaService.deleteAllPaginas();
 
 
         Pagina uno = new Pagina(
@@ -67,4 +71,19 @@ public class PaginaServiceTests {
                 && paginasAGuardar.containsAll(paginasBuscadas)
                 && paginasBuscadas.containsAll(paginasAGuardar));
     }
+    @DisplayName("Test que inserta varias páginas y luego las consulta")
+    @Test
+    public void TestAnadirConsulta() {
+
+        Pagina uno = new Pagina(
+                "Tipo 1",
+                "www.pagina1.es",
+                "Título 1",
+                "Contenido de la página 1",
+                "url a la imagen 1"
+        );
+        paginaService.addPagina(uno);
+        assertEquals(paginaService.getPagina("Título 1"), uno);
+    }
+
 }
