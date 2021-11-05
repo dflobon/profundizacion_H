@@ -3,7 +3,7 @@ services:
   cabin_db:
     image: mysql:latest
     volumes:
-      - "./volumes/mysql:/var/lib/mysql"
+      - "./volumen/mysql-data/db:/var/lib/mysql"
     restart: always
     ports:
       - "3306:3306"

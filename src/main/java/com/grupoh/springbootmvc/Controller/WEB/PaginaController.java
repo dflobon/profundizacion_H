@@ -1,10 +1,13 @@
-package com.grupoh.springbootmvc.pagina;
+package com.grupoh.springbootmvc.Controller.WEB;
 
+import com.grupoh.springbootmvc.Entity.Pagina;
+import com.grupoh.springbootmvc.Service.PaginaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
@@ -19,13 +22,9 @@ public class PaginaController {
 
     @GetMapping
     public String paginaIndex(Model model) {
-        model.addAttribute("paginas", paginaService.getPaginas());
+        model.addAttribute("paginas", paginaService.getAllPaginas());
         return "vistaPaginaIndex";
     }
 
-    @GetMapping("/api")
-    public List<Pagina> getPaginas() {
-        return paginaService.getPaginas();
-    }
 
 }
