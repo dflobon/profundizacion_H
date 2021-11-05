@@ -8,7 +8,8 @@ Tarea a realizar:
 
 https://moodle.upm.es/titulaciones/oficiales/mod/page/view.php?id=447288
 
-Ideas
+# Ideas
+
 Pagina visualizacion consultas -> Listar las consultas por usuario
 
 grid para visualizar las paginas
