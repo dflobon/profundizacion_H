@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity(name = "UsuarioPagina")
-@Table(name = "UsuarioPagina")
+@Table(name = "usuariopagina")
 @Getter
 @Setter
 @ToString
