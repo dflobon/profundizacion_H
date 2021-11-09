@@ -8,9 +8,9 @@ import static org.junit.jupiter.api.Assertions.fail;
 @SpringBootTest
 class SpringBootMvcApplicationTests {
 
-    @Test
-    void contextLoads() {
-        fail("Not implemented");
-    }
+//    @Test
+//    void contextLoads() {
+//        fail("Not implemented");
+//    }
 
 }

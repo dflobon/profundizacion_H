@@ -7,14 +7,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.security.Principal;
 
+@Controller
 public class homeController {
-    @Controller
-    class HomeController {
-
         @GetMapping("/")
-        String index(Principal principal) {
-            return principal != null ? "vistaDefault" : "logina";
+        public String agregarConsulta(Model model) {
+            model.addAttribute("name", "Hola");
+            return "AgregarConsulta";
         }
-
-    }
 }
