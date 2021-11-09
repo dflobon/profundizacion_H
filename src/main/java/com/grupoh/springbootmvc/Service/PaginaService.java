@@ -1,10 +1,12 @@
 package com.grupoh.springbootmvc.Service;
 
 import com.grupoh.springbootmvc.Entity.Pagina;
+import com.grupoh.springbootmvc.Entity.Usuario;
 import com.grupoh.springbootmvc.Repository.PaginaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.TypedQuery;
 import java.util.List;
 import java.util.Optional;
 
@@ -62,5 +64,9 @@ public class PaginaService {
         } else throw new IllegalStateException(
                 "Compania con id " + paginaId + " no existe"
         );
+    }
+
+    public List<Pagina> getUserPages( Usuario u ) {
+        return paginaRepository.getUserPages(u.getId());
     }
 }
