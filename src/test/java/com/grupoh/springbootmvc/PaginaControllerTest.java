@@ -12,11 +12,12 @@ public class PaginaControllerTest {
 
     @Autowired
     private PaginaController paginaController;
+    @Autowired
     private PaginaService paginaService;
 
-//    @Test
-//    public void contextLoads() {
-//        paginaService.getPagina("hola");
-//        assertThat(paginaController).isNotNull();
-//    }
+    @Test
+    public void contextLoads() {
+        paginaService.getPagina("hola");
+        assertThat(paginaController).isNotNull();
+    }
 }
