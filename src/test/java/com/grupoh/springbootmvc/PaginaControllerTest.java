@@ -17,7 +17,7 @@ public class PaginaControllerTest {
 
     @Test
     public void contextLoads() {
-        paginaService.getPagina("hola");
+        paginaService.getPaginaFromTitulo("hola");
         assertThat(paginaController).isNotNull();
     }
 }

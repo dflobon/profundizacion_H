@@ -26,6 +26,11 @@ public class ControllerPaginaAPI {
     public Optional<Pagina> getPaginaFromId(@PathVariable("paginaId") Long paginaId) {
         return paginaService.getPaginaFromId(paginaId);
     }
+    @GetMapping(path = "/titulo/{titulo}")
+    public Pagina getPaginaFromTitulo(@PathVariable("titulo") String titulo) {
+        return paginaService.getPaginaFromTitulo(titulo);
+    }
+
     @PostMapping()
     public void createPagina(@RequestBody Pagina pagina) {
         paginaService.addPagina(pagina);
@@ -34,6 +39,11 @@ public class ControllerPaginaAPI {
     public void deletePaginaById(@PathVariable("paginaId") Long paginaId){
         paginaService.deletePaginaById(paginaId);
     }
+    @DeleteMapping(path = "deleteAll")
+    public void deleteAllPaginas() {
+        paginaService.deleteAllPaginas();
+    }
+
     @PutMapping(path = "{paginaId}")
     public void updatePaginaById(
             @PathVariable("paginaId") Long paginaId,
