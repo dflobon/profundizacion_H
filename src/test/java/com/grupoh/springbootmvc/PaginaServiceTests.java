@@ -83,7 +83,7 @@ public class PaginaServiceTests {
                 "url a la imagen 1"
         );
         paginaService.addPagina(uno);
-        assertEquals(paginaService.getPagina("Título 1"), uno);
+        assertEquals(paginaService.getPaginaFromTitulo("Título 1"), uno);
     }
 
 }
